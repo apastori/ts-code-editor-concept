@@ -19,5 +19,18 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Enforce single quotes
+      quotes: ['error', 'single', { avoidEscape: true }],
+      '@/quotes': ['error', 'single', { avoidEscape: true }],
+      // Single quotes on JSX Elements
+      'jsx-quotes': ['error', 'prefer-single'],
+      // Disallow semicolons
+      semi: ['error', 'never'],
+      '@/semi': ['error', 'never'],
+      // Enforces 2 spaces per indentation level
+      "indent": ["error", 2],
+      '@/indent': ['error', 2]
+    }
   },
 ])
