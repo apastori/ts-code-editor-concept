@@ -1,0 +1,1 @@
+export type languages = 'javascript' | 'typescript' | 'python' | 'java' | 'csharp' | 'php'

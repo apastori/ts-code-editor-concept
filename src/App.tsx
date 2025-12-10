@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState, type JSX } from 'react'
+import { type JSX } from 'react'
 import './App.css'
+import { CodeEditor } from './components/CodeEditor'
 
 function App(): JSX.Element {
-  const [count, setCount] = useState(0)
   return (
-    <div className='code-editor'>
+    <div className='code-editor-app'>
+      <CodeEditor />
     </div>
   )
 }
