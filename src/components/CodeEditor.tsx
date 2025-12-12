@@ -43,7 +43,10 @@ export const CodeEditor = (): JSX.Element => {
         value={value}
         onChange={handleChange}
       />
-      <CodeResult  />
+      <CodeResult 
+        language={language} 
+        editorRef={monacoEditorRef}  
+      />
     </div>
   )
 }

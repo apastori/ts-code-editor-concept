@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, type CSSProperties, type JSX } from 'react'
 import { LANGUAGE_VERSIONS } from '../constants'
-import type { LanguageSelectorProps } from './types/LanguageSelectorPropts'
+import type { LanguageSelectorProps } from './types/LanguageSelectorProps'
 import type { languages } from '../types/languages'
 
 const styles: Record<string, CSSProperties> = {
