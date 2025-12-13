@@ -1,6 +1,7 @@
 import type { JSX } from 'react'
 import { CodeEditor } from './components/CodeEditor'
 import { styled, keyframes } from 'styled-components'
+import { GlobalStyles } from './styles/GlobalStyles'
 
 const glow = keyframes`
   0%, 100% {
@@ -43,20 +44,12 @@ const Title = styled.h1`
   }
 `
 
-const GlobalStyles = styled.div`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`
-
 function App(): JSX.Element {
   return (
     <>
       <GlobalStyles />
       <AppContainer>
-        <Title>Code Editor</Title>
+        <Title>Code Executor</Title>
         <CodeEditor />
       </AppContainer>
     </>
