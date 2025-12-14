@@ -6,6 +6,7 @@ import type { languages } from '../types/languages'
 import { LanguageSelector } from './LanguageSelector'
 import { CodeResult } from './CodeResult'
 import { styled, keyframes } from 'styled-components'
+import { Copyright } from './Copyright'
 
 const glow = keyframes`
   0%, 100% {
@@ -149,6 +150,7 @@ export const CodeEditor = (): JSX.Element => {
           <CodeResult language={language} editorRef={monacoEditorRef} />
         </Panel>
       </EditorContainer>
+      <Copyright />
     </PageContainer>
   )
 }

@@ -168,7 +168,7 @@ const ToastDescription = styled.div`
   font-size: 0.875rem;
 `
 
-const CodeResult: React.FC<CodeResultProps> = ({ editorRef, language }): JSX.Element => {
+const CodeResult: React.FC<CodeResultProps> = ({ editorRef, language }: CodeResultProps): JSX.Element => {
   const [output, setOutput] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isError, setIsError] = useState<boolean>(false)
