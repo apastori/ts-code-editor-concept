@@ -1,5 +1,6 @@
 import type { JSX } from 'react'
 import { styled, keyframes } from 'styled-components'
+import type { FourDigitString } from '../types/FourDigitString'
 
 const glow = keyframes`
   0%, 100% {
@@ -56,7 +57,8 @@ const CopyrightText = styled.p`
 `
 
 export const Copyright = (): JSX.Element => {
-  const currentYear: number = new Date().getFullYear()
+  const currentYearNumber: number = new Date().getFullYear()
+  const currentYear: FourDigitString = currentYearNumber.toString() as FourDigitString
 
   return (
     <CopyrightSection>
