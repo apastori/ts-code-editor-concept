@@ -1,5 +1,14 @@
 {
     "compilerOptions": {
+        /* Module resolution base */
+        "baseUrl": "src",
+        "paths": {
+            "@constants/*": ["constants/*"],
+            "@utils/*": ["utils/*"],
+            "@errors/*": ["errors/*"],
+            "@types/*": ["types/*"],
+            "@api/*": ["api/*"]
+        },
         /* Consistency */
         "forceConsistentCasingInFileNames": true,          /* Ensure that casing is correct in imports. */
         /* Strictness */
