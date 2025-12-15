@@ -1,4 +1,4 @@
-import { styled, keyframes } from 'styled-components'
+import { keyframes, styled } from 'styled-components'
 import type { ToastStatus } from '../types/ToastStatus'
 
 const slideIn = keyframes`

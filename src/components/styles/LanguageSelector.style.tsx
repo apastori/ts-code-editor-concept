@@ -1,4 +1,4 @@
-import { styled, keyframes } from 'styled-components'
+import { keyframes, styled } from 'styled-components'
 
 const pulse = keyframes`
   0%, 100% {

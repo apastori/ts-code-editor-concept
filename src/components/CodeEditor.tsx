@@ -1,19 +1,35 @@
-import { useRef, useState, type JSX } from 'react'
-import { CODE_SNIPPETS } from '../constants'
 import { Editor, type OnMount } from '@monaco-editor/react'
 import type * as Monaco from 'monaco-editor'
+import { type JSX, useRef, useState } from 'react'
+import { CODE_SNIPPETS } from '../constants'
 import type { languages } from '../types/languages'
-import { LanguageSelector } from './LanguageSelector'
 import { CodeResult } from './CodeResult'
 import { Copyright } from './Copyright'
-import { PageContainer, Title, EditorContainer, Panel, SectionTitle, EditorWrapper } from './styles/CodeEditor.style'
+import { LanguageSelector } from './LanguageSelector'
+import {
+  EditorContainer,
+  EditorWrapper,
+  PageContainer,
+  Panel,
+  SectionTitle,
+  Title
+} from './styles/CodeEditor.style'
 
 const CodeEditor = (): JSX.Element => {
-  const monacoEditorRef: React.RefObject<Monaco.editor.IStandaloneCodeEditor | null> = useRef<Monaco.editor.IStandaloneCodeEditor>(null)
-  const [value, setValue]: [string, React.Dispatch<React.SetStateAction<string>>] = useState<string>('')
-  const [language, setLanguage]: [languages, React.Dispatch<React.SetStateAction<languages>>] = useState<languages>('javascript')
-  
-  const handleEditorMount: OnMount = (editor: Monaco.editor.IStandaloneCodeEditor) => {
+  const monacoEditorRef: React.RefObject<Monaco.editor.IStandaloneCodeEditor | null> =
+    useRef<Monaco.editor.IStandaloneCodeEditor>(null)
+  const [value, setValue]: [
+    string,
+    React.Dispatch<React.SetStateAction<string>>
+  ] = useState<string>('')
+  const [language, setLanguage]: [
+    languages,
+    React.Dispatch<React.SetStateAction<languages>>
+  ] = useState<languages>('javascript')
+
+  const handleEditorMount: OnMount = (
+    editor: Monaco.editor.IStandaloneCodeEditor
+  ) => {
     console.log('Editor instance:', editor)
     monacoEditorRef.current = editor
     editor.focus()
@@ -27,7 +43,7 @@ const CodeEditor = (): JSX.Element => {
     setLanguage(newLanguage)
     setValue(CODE_SNIPPETS[newLanguage])
   }
-  
+
   return (
     <PageContainer>
       <Title>Code Editor</Title>
@@ -39,11 +55,11 @@ const CodeEditor = (): JSX.Element => {
             <Editor
               options={{
                 minimap: {
-                  enabled: false,
-                },
+                  enabled: false
+                }
               }}
-              height='60vh'
-              theme='vs-dark'
+              height="60vh"
+              theme="vs-dark"
               language={language}
               defaultValue={CODE_SNIPPETS[language]}
               onMount={handleEditorMount}

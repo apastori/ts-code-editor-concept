@@ -1,14 +1,30 @@
-import React, { useEffect, useRef, useState, type JSX } from 'react'
+import React, { type JSX, useEffect, useRef, useState } from 'react'
 import { LANGUAGE_VERSIONS } from '../constants'
-import type { LanguageSelectorProps } from './types/LanguageSelectorProps'
 import type { languages } from '../types/languages'
-import { Container, MenuWrapper, Button, Dropdown, MenuItem, Version } from './styles/LanguageSelector.style'
+import {
+  Button,
+  Container,
+  Dropdown,
+  MenuItem,
+  MenuWrapper,
+  Version
+} from './styles/LanguageSelector.style'
+import type { LanguageSelectorProps } from './types/LanguageSelectorProps'
 
-const languages_tuples: [languages, string][] = Object.entries(LANGUAGE_VERSIONS) as [languages, string][]
+const languages_tuples: [languages, string][] = Object.entries(
+  LANGUAGE_VERSIONS
+) as [languages, string][]
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ language, onSelect }: LanguageSelectorProps): JSX.Element => {
-  const [isOpen, setIsOpen]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] = useState<boolean>(false)
-  const menuRef: React.RefObject<HTMLDivElement | null> = useRef<HTMLDivElement | null>(null)
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({
+  language,
+  onSelect
+}: LanguageSelectorProps): JSX.Element => {
+  const [isOpen, setIsOpen]: [
+    boolean,
+    React.Dispatch<React.SetStateAction<boolean>>
+  ] = useState<boolean>(false)
+  const menuRef: React.RefObject<HTMLDivElement | null> =
+    useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -42,7 +58,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ language, onSelect 
                 </MenuItem>
               )
             })}
-          </ Dropdown>
+          </Dropdown>
         )}
       </MenuWrapper>
     </Container>

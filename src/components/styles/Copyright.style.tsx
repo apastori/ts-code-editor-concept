@@ -1,7 +1,6 @@
 import { styled } from 'styled-components'
 import { borderPulse, glow } from './global'
 
-
 export const CopyrightSection = styled.footer`
   max-width: 1400px;
   margin: 3rem auto 0;

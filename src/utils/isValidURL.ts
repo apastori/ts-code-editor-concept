@@ -2,7 +2,7 @@
  * Validates if a string is a valid URL
  * @param {string} url - The string to validate
  * @returns {boolean} true if valid URL, false otherwise
-*/
+ */
 
 function isValidURL(url: string): boolean {
   try {
